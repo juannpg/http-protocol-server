@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hijos</title>
+
+  <link rel="stylesheet" href="src/css/main.css">
+</head>
+<body id="body">
+  <div id="main1"></h2>
+    
+    <h2>Cuántos hijos tienes? (POST)</h2>
+    <input type="text" name="username" id="usernameInput" placeholder="Ingresa tu username">
+    <input type="number" name="hijos" id="hijosInput" placeholder="Ingresa tu cantidad de hijos">
+    <button id="submitBtnNum">Enviar</button>
+    
+    <h2>Comprobar hijos (GET)</h2>
+    <input type="text" name="usernameCheckInput" id="usernameCheckInput" placeholder="Ingresa tu username">
+    <button id="submitBtnUsernameCheck">Enviar</button>
+
+    <h2>Cambiar datos (PATCH)</h2>
+    <input type="text" name="usernamePatchInput" id="usernamePatchInput" placeholder="Ingresa tu username">
+    <input type="text" name="hijosPatchInput" id="hijosPatchInput" placeholder="Cantidad nueva de hijos">
+    <button id="usernamePatchBtn">Enviar</button>
+  </div>
+
+  <script src="dist/front.js"></script>
+  <script src="dist/peticiones/hijos.js"></script>
+  <script src="dist/peticiones/hijosget.js"></script>
+  <script src="dist/peticiones/hijospatch.js"></script>
+</body>
+</html>

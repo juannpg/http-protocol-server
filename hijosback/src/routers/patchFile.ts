@@ -4,7 +4,7 @@ import { PrismaClient } from "@prisma/client";
 const router = express.Router();
 const prisma = new PrismaClient();
 
-router.get("/hijosPatch", async (req, res) => {
+router.get("/get", async (req, res) => {
   const { username, numHijosNew } = req.query;
 
   if (!username || !numHijosNew) {
@@ -26,7 +26,7 @@ router.get("/hijosPatch", async (req, res) => {
 });
 
 // if usuario encontrado
-router.patch("/hijosPatch", async (req, res) => {
+router.patch("/patch", async (req, res) => {
   const { username, numHijosNew } = req.body;
   const numHijosNewParsed = parseInt(numHijosNew as string);
 

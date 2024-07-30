@@ -1,8 +1,8 @@
-const submitBtnUsernameCheck = document.getElementById('submitBtnUsernameCheck') as HTMLButtonElement;
+const getBtn = document.getElementById('getBtn') as HTMLButtonElement;
 
-submitBtnUsernameCheck.addEventListener('click', async () => {
+getBtn.addEventListener('click', async () => {
   const username = usernameCheckInput.value;
-  const response = await fetch(`http://localhost:1407/api/routers/hijosGet/hijosGet?username=${username}`, {
+  const response = await fetch(`http://localhost:1407/api/routers/getFile/get?username=${username}`, {
       method: 'GET',
       headers: {
           'Content-Type': 'application/json'

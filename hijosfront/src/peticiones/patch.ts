@@ -1,9 +1,9 @@
-const usernamePatchBtn = document.getElementById('usernamePatchBtn') as HTMLButtonElement;
+const patchBtn = document.getElementById('patchBtn') as HTMLButtonElement;
 
-usernamePatchBtn.addEventListener('click', async () => {
+patchBtn.addEventListener('click', async () => {
     const username = usernamePatchInput.value;
     const numHijosNew = parseInt(hijosPatchInput.value);
-    const response = await fetch(`http://localhost:1407/api/routers/hijosPatch/hijosPatch?username=${username}&numHijosNew=${numHijosNew}`, {
+    const response = await fetch(`http://localhost:1407/api/routers/patchFile/get?username=${username}&numHijosNew=${numHijosNew}`, {
       method: 'GET',
       headers: {
           'Content-Type': 'application/json'
@@ -13,7 +13,7 @@ usernamePatchBtn.addEventListener('click', async () => {
     console.log(log);
 
     if (response.status === 200) {
-      const response2 = await fetch('http://localhost:1407/api/routers/hijospatch/hijosPatch', {
+      const response2 = await fetch('http://localhost:1407/api/routers/patchFile/patch', {
         method: 'PATCH',
         headers: {
             'Content-Type': 'application/json'

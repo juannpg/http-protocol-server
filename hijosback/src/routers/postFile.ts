@@ -4,7 +4,7 @@ import { PrismaClient } from '@prisma/client'
 const router = express.Router()
 const prisma = new PrismaClient()
 
-router.post("/hijosPost", async (req, res) => {
+router.post("/post", async (req, res) => {
   const { numHijos, username } = req.body;
 
   if (!numHijos) {

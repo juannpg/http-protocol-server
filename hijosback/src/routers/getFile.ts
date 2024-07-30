@@ -4,7 +4,7 @@ import { PrismaClient } from "@prisma/client"
 const router = express.Router()
 const prisma = new PrismaClient()
 
-router.get("/hijosGet", async (req, res) => {
+router.get("/get", async (req, res) => {
   const { username } = req.query;
 
   if (!username) {

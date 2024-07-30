@@ -35,23 +35,19 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var submitBtnNum = document.getElementById('submitBtnNum');
-submitBtnNum.addEventListener('click', function () { return __awaiter(void 0, void 0, void 0, function () {
-    var numHijos, username, response, log;
+var patchBtn = document.getElementById('patchBtn');
+patchBtn.addEventListener('click', function () { return __awaiter(void 0, void 0, void 0, function () {
+    var username, numHijosNew, response, log, response2, log2;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
-                numHijos = parseInt(hijosInput.value);
-                username = usernameInput.value;
-                return [4, fetch('http://localhost:1407/api/routers/hijos/hijosPost', {
-                        method: 'POST',
+                username = usernamePatchInput.value;
+                numHijosNew = parseInt(hijosPatchInput.value);
+                return [4, fetch("http://localhost:1407/api/routers/patchFile/get?username=".concat(username, "&numHijosNew=").concat(numHijosNew), {
+                        method: 'GET',
                         headers: {
                             'Content-Type': 'application/json'
                         },
-                        body: JSON.stringify({
-                            numHijos: numHijos,
-                            username: username,
-                        })
                     })];
             case 1:
                 response = _a.sent();
@@ -59,10 +55,30 @@ submitBtnNum.addEventListener('click', function () { return __awaiter(void 0, vo
             case 2:
                 log = _a.sent();
                 console.log(log);
-                if (response.status === 200) {
-                    alert('Numero de hijos registrados correctamente');
+                if (!(response.status === 200)) return [3, 5];
+                return [4, fetch('http://localhost:1407/api/routers/patchFile/patch', {
+                        method: 'PATCH',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            username: username,
+                            numHijosNew: numHijosNew,
+                        }),
+                    })];
+            case 3:
+                response2 = _a.sent();
+                return [4, response2.json()];
+            case 4:
+                log2 = _a.sent();
+                console.log(log2);
+                if (response2.status === 200) {
+                    alert('¡' + log2.updatedUser.username + '!' + ' Tu cantidad de hijos actualizada a: ' + log2.updatedUser.numHijos);
                     window.location.reload();
                 }
+                ;
+                _a.label = 5;
+            case 5:
                 ;
                 return [2];
         }

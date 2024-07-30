@@ -1,8 +1,8 @@
 import cors from 'cors'
 import express from 'express'
-import hijosRouter from './routers/hijos';
-import hijosGetRouter from './routers/hijosGet';
-import hijosPatchRouter from './routers/hijosPatch';
+import postRouter from './routers/postFile';
+import getRouter from './routers/getFile';
+import patchRouter from './routers/patchFile';
 
 const app = express();
 
@@ -13,9 +13,9 @@ app.use(
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
   })
 );
-app.use("/api/routers/hijos", hijosRouter);
-app.use("/api/routers/hijosGet", hijosGetRouter);
-app.use("/api/routers/hijosPatch", hijosPatchRouter);
+app.use("/api/routers/postFile", postRouter);
+app.use("/api/routers/getFile", getRouter);
+app.use("/api/routers/patchFile", patchRouter);
 
 const PORT = 1407;
 app.listen(PORT, () => {

@@ -35,18 +35,23 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var submitBtnUsernameCheck = document.getElementById('submitBtnUsernameCheck');
-submitBtnUsernameCheck.addEventListener('click', function () { return __awaiter(void 0, void 0, void 0, function () {
-    var username, response, log;
+var postBtn = document.getElementById('postBtn');
+postBtn.addEventListener('click', function () { return __awaiter(void 0, void 0, void 0, function () {
+    var numHijos, username, response, log;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
-                username = usernameCheckInput.value;
-                return [4, fetch("http://localhost:1407/api/routers/hijosGet/hijosGet?username=".concat(username), {
-                        method: 'GET',
+                numHijos = parseInt(hijosInput.value);
+                username = usernameInput.value;
+                return [4, fetch('http://localhost:1407/api/routers/postFile/post', {
+                        method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'
                         },
+                        body: JSON.stringify({
+                            numHijos: numHijos,
+                            username: username,
+                        })
                     })];
             case 1:
                 response = _a.sent();
@@ -55,9 +60,10 @@ submitBtnUsernameCheck.addEventListener('click', function () { return __awaiter(
                 log = _a.sent();
                 console.log(log);
                 if (response.status === 200) {
-                    alert("nombre: " + log.user.username + "\n" + "hijos: " + log.user.numHijos);
+                    alert('Numero de hijos registrados correctamente');
                     window.location.reload();
                 }
+                ;
                 return [2];
         }
     });

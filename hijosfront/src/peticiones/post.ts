@@ -1,9 +1,9 @@
-const submitBtnNum = document.getElementById('submitBtnNum') as HTMLButtonElement;
+const postBtn = document.getElementById('postBtn') as HTMLButtonElement;
 
-submitBtnNum.addEventListener('click', async () => {
+postBtn.addEventListener('click', async () => {
     const numHijos = parseInt(hijosInput.value);
     const username = usernameInput.value;
-    const response = await fetch('http://localhost:1407/api/routers/hijos/hijosPost', {
+    const response = await fetch('http://localhost:1407/api/routers/postFile/post', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

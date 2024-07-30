@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hijos</title>
+  <title>Protocolo HTTP</title>
 
   <link rel="stylesheet" href="src/css/main.css">
 </head>
@@ -13,21 +13,21 @@
     <h2>Cuántos hijos tienes? (POST)</h2>
     <input type="text" name="username" id="usernameInput" placeholder="Ingresa tu username">
     <input type="number" name="hijos" id="hijosInput" placeholder="Ingresa tu cantidad de hijos">
-    <button id="submitBtnNum">Enviar</button>
+    <button id="postBtn">Enviar</button>
     
     <h2>Comprobar hijos (GET)</h2>
     <input type="text" name="usernameCheckInput" id="usernameCheckInput" placeholder="Ingresa tu username">
-    <button id="submitBtnUsernameCheck">Enviar</button>
+    <button id="getBtn">Enviar</button>
 
     <h2>Cambiar datos (PATCH)</h2>
     <input type="text" name="usernamePatchInput" id="usernamePatchInput" placeholder="Ingresa tu username">
     <input type="text" name="hijosPatchInput" id="hijosPatchInput" placeholder="Cantidad nueva de hijos">
-    <button id="usernamePatchBtn">Enviar</button>
+    <button id="patchBtn">Enviar</button>
   </div>
 
   <script src="dist/front.js"></script>
-  <script src="dist/peticiones/hijos.js"></script>
-  <script src="dist/peticiones/hijosget.js"></script>
-  <script src="dist/peticiones/hijospatch.js"></script>
+  <script src="dist/peticiones/post.js"></script>
+  <script src="dist/peticiones/get.js"></script>
+  <script src="dist/peticiones/patch.js"></script>
 </body>
 </html>

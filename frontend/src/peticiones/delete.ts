@@ -18,7 +18,7 @@ deleteBtn.addEventListener('click', async() => {
   const log = await response.json();
   console.log(log);
   if (response.status === 200) {
-    alert(username  + ' ha sido eliminado');
+    alert(username  + ' has been deleted successfully');
     window.location.reload();
   };
 });

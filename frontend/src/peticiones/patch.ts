@@ -27,7 +27,7 @@ patchBtn.addEventListener('click', async () => {
       console.log(log2);
 
       if (response2.status === 200) {
-        alert('¡' + log2.updatedUser.username + '!' + ' Tu cantidad de hijos actualizada a: ' + log2.updatedUser.numHijos);
+        alert('¡' + log2.updatedUser.username + '!' + ' Your number of children updated to: ' + log2.updatedUser.numHijos);
         window.location.reload();
       };
     };

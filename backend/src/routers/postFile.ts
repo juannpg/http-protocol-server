@@ -8,7 +8,7 @@ router.post("/post", async (req, res) => {
   const { numHijos, username, password } = req.body;
 
   if (!numHijos || !username || !password) {
-    res.status(400).json({ error: "faltan datos" });
+    res.status(400).json({ error: "Missing required fields" });
     return;
   }
   
@@ -20,7 +20,7 @@ router.post("/post", async (req, res) => {
     },
   });
   
-  res.status(200).json({ message: "Hijos creados" });
+  res.status(200).json({ message: "User created successfully" });
 });
 
 export default router;

@@ -12,7 +12,7 @@ getBtn.addEventListener('click', async () => {
   console.log(log);
 
   if (response.status === 200) {
-    alert("nombre: " + log.user.username + "\n" + "hijos: " + log.user.numHijos);
+    alert("Name: " + log.user.username + "\n" + "Number of children: " + log.user.numHijos);
     window.location.reload();
   }
 });

@@ -60,7 +60,7 @@ deleteBtn.addEventListener('click', function () { return __awaiter(void 0, void 
                 log = _a.sent();
                 console.log(log);
                 if (response.status === 200) {
-                    alert(username + ' ha sido eliminado');
+                    alert(username + ' has been deleted successfully');
                     window.location.reload();
                 }
                 ;

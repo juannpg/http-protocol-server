@@ -7,7 +7,7 @@ const prisma = new PrismaClient()
 router.delete("/delete", async (req, res) => {
   const { username, password } = req.body
   if (!username || !password) {
-    res.status(400).json({ error: "faltan datos" });
+    res.status(400).json({ error: "missing required fields" });
     return;
   }
 
@@ -18,11 +18,11 @@ router.delete("/delete", async (req, res) => {
     }
   })
   if (!user) {
-    res.status(404).json({ error: "usuario no encontrado" });
+    res.status(404).json({ error: "user not found" });
     return;
   }
 
-  res.status(200).json({ message: "usuario eliminado" });
+  res.status(200).json({ message: "user deleted successfully" });
 })
 
 export default router

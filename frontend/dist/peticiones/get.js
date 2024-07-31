@@ -55,7 +55,7 @@ getBtn.addEventListener('click', function () { return __awaiter(void 0, void 0, 
                 log = _a.sent();
                 console.log(log);
                 if (response.status === 200) {
-                    alert("nombre: " + log.user.username + "\n" + "hijos: " + log.user.numHijos);
+                    alert("Name: " + log.user.username + "\n" + "Number of children: " + log.user.numHijos);
                     window.location.reload();
                 }
                 return [2];

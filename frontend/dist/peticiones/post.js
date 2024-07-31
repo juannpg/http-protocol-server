@@ -62,7 +62,7 @@ postBtn.addEventListener('click', function () { return __awaiter(void 0, void 0,
                 log = _a.sent();
                 console.log(log);
                 if (response.status === 200) {
-                    alert('Numero de hijos registrados correctamente');
+                    alert('Number of children registered successfully');
                     window.location.reload();
                 }
                 ;

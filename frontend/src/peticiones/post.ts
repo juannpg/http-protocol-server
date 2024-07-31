@@ -19,7 +19,7 @@ postBtn.addEventListener('click', async () => {
     console.log(log);
 
     if (response.status === 200) {
-        alert('Numero de hijos registrados correctamente');
+        alert('Number of children registered successfully');
         window.location.reload();
     };
 });

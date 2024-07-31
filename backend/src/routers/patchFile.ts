@@ -8,7 +8,7 @@ router.get("/get", async (req, res) => {
   const { username, numHijosNew } = req.query;
 
   if (!username || !numHijosNew) {
-    res.status(400).json({ error: "faltan datos" });
+    res.status(400).json({ error: "missing required fields" });
     return;
   }
 
@@ -23,14 +23,14 @@ router.get("/get", async (req, res) => {
   });
 
   if (!user) {
-    res.status(404).json({ error: "usuario no encontrado" });
+    res.status(404).json({ error: "user not found" });
     return;
   }
 
-  res.status(200).json({ user, message: "Usuario encontrado" });
+  res.status(200).json({ user, message: "use found" });
 });
 
-// if usuario encontrado
+// if user found
 router.patch("/patch", async (req, res) => {
   const { username, numHijosNew } = req.body;
   const numHijosNewParsed = parseInt(numHijosNew as string);
@@ -44,7 +44,7 @@ router.patch("/patch", async (req, res) => {
     },
   });
 
-  res.status(200).json({ updatedUser, message: "Hijos actualizados" });
+  res.status(200).json({ updatedUser, message: "Cuantity of children updated successfully" });
 });
 
 export default router;

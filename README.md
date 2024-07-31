@@ -1,31 +1,40 @@
-# HTTP PROTOCOL PROYECT
+# HTTP Protocol Project
 
-### NOTE
-This is a proyect developed in Spanish, thus, there are some variables declarated in spanish, for example: "numHijos" refers to the cuantity of children (noChildren); hijosInput (childrenInput), refers to the text input of the cuantity of children, and so on.
+## Note
+This project is developed in Spanish, so some variables are declared in Spanish. For example: 
+- `numHijos` refers to the quantity of children (`noChildren`)
+- `hijosInput` refers to the text input of the quantity of children (`childrenInput`), and so on.
 
-## Description 
-
-This is a project whose purpose is to teach how to make a server with the four possible HTTP requests with postgreSQL express, prisma, and node js.
+## Description
+This project demonstrates how to create a server that handles the four main HTTP requests using PostgreSQL, Express, Prisma, and Node.js.
 
 ## Deployment
 
-The first thing you must do is install postgreSQL, and from the pgAdmin tool, create a password for the "postgres user", and a database with the name "protocolo-http". Then create a file named ".env" in the "backend" folder, and type this:
-```
-DATABASE_URL="postgresql://postgres:PASSWORD@localhost:5432/protocolo-http?schema=public"
-```
-Then, on the same directory, run:
-```
-npx prisma migrate dev
-npm run dev
-```
+1. **Install PostgreSQL:**
+   - Using the pgAdmin tool, create a password for the `postgres` user.
+   - Create a database named `protocolo-http`.
 
-Finally, we will have to go to the "frontend" directory, and run:
-```
-npx live-server
-```
+2. **Setup Environment Variables:**
+   - Create a file named `.env` in the `backend` folder with the following content:
+     ```
+     DATABASE_URL="postgresql://postgres:PASSWORD@localhost:5432/protocolo-http?schema=public"
+     ```
+     Replace `PASSWORD` with the actual password you set for the `postgres` user.
+
+3. **Run Migrations and Start Server:**
+   - Navigate to the `backend` directory and run:
+     ```
+     npx prisma migrate dev
+     npm run dev
+     ```
+
+4. **Start Frontend Server:**
+   - Navigate to the `frontend` directory and run:
+     ```
+     npx live-server
+     ```
 
 ## Usage
-Now, you can create, patch, get and delete information for all users. To check the complete  database, you will just have to go to the "backend" folder, and run:
-```
+You can create, patch, get, and delete information for all users. To check the complete database, navigate to the `backend` folder and run:
+```bash
 npx prisma studio
-```

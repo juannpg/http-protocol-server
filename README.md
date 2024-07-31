@@ -1,5 +1,8 @@
 # HTTP PROTOCOL PROYECT
 
+### NOTE
+This is a proyect developed in Spanish, thus, there are some variables declarated in spanish, for example: "numHijos" refers to the cuantity of children (noChildren); hijosInput (childrenInput), refers to the text input of the cuantity of children, and so on.
+
 ## Description 
 
 This is a project whose purpose is to teach how to make a server with the four possible HTTP requests with postgreSQL express, prisma, and node js.

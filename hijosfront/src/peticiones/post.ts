@@ -3,6 +3,7 @@ const postBtn = document.getElementById('postBtn') as HTMLButtonElement;
 postBtn.addEventListener('click', async () => {
     const numHijos = parseInt(hijosInput.value);
     const username = usernameInput.value;
+    const password = passwordInput.value;
     const response = await fetch('http://localhost:1407/api/routers/postFile/post', {
         method: 'POST',
         headers: {
@@ -11,6 +12,7 @@ postBtn.addEventListener('click', async () => {
         body: JSON.stringify({
             numHijos,
             username,
+            password,
         })
     });
     const log = await response.json();

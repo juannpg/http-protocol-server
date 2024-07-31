@@ -3,6 +3,7 @@ import express from 'express'
 import postRouter from './routers/postFile';
 import getRouter from './routers/getFile';
 import patchRouter from './routers/patchFile';
+import deleteRouter from './routers/deleteFile';
 
 const app = express();
 
@@ -16,6 +17,7 @@ app.use(
 app.use("/api/routers/postFile", postRouter);
 app.use("/api/routers/getFile", getRouter);
 app.use("/api/routers/patchFile", patchRouter);
+app.use("/api/routers/deleteFile", deleteRouter);
 
 const PORT = 1407;
 app.listen(PORT, () => {

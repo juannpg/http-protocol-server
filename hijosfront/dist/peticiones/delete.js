@@ -35,24 +35,22 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var postBtn = document.getElementById('postBtn');
-postBtn.addEventListener('click', function () { return __awaiter(void 0, void 0, void 0, function () {
-    var numHijos, username, password, response, log;
+var deleteBtn = document.getElementById('deleteBtn');
+deleteBtn.addEventListener('click', function () { return __awaiter(void 0, void 0, void 0, function () {
+    var username, password, response, log;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
-                numHijos = parseInt(hijosInput.value);
-                username = usernameInput.value;
-                password = passwordInput.value;
-                return [4, fetch('http://localhost:1407/api/routers/postFile/post', {
-                        method: 'POST',
+                username = usernameDeleteInput.value;
+                password = passwordDeleteInput.value;
+                return [4, fetch('http://localhost:1407/api/routers/deleteFile/delete', {
+                        method: 'DELETE',
                         headers: {
-                            'Content-Type': 'application/json'
+                            'Content-Type': 'application/json',
                         },
                         body: JSON.stringify({
-                            numHijos: numHijos,
                             username: username,
-                            password: password,
+                            password: password
                         })
                     })];
             case 1:
@@ -62,7 +60,7 @@ postBtn.addEventListener('click', function () { return __awaiter(void 0, void 0,
                 log = _a.sent();
                 console.log(log);
                 if (response.status === 200) {
-                    alert('Numero de hijos registrados correctamente');
+                    alert(username + ' ha sido eliminado');
                     window.location.reload();
                 }
                 ;

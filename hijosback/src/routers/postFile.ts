@@ -5,9 +5,9 @@ const router = express.Router()
 const prisma = new PrismaClient()
 
 router.post("/post", async (req, res) => {
-  const { numHijos, username } = req.body;
+  const { numHijos, username, password } = req.body;
 
-  if (!numHijos) {
+  if (!numHijos || !username || !password) {
     res.status(400).json({ error: "faltan datos" });
     return;
   }
@@ -16,6 +16,7 @@ router.post("/post", async (req, res) => {
     data: {
       numHijos: numHijos,
       username: username,
+      password: password,
     },
   });
   

@@ -22,6 +22,11 @@ router.get("/get", async (req, res) => {
     },
   });
 
+  if (!user) {
+    res.status(404).json({ error: "usuario no encontrado" });
+    return;
+  }
+
   res.status(200).json({ user, message: "Usuario encontrado" });
 });
 

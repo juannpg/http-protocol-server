@@ -12,6 +12,7 @@
     
     <h2>Cuántos hijos tienes? (POST)</h2>
     <input type="text" name="username" id="usernameInput" placeholder="Ingresa tu username">
+    <input type="password" name="password" id="passwordInput" placeholder="Ingresa tu password">
     <input type="number" name="hijos" id="hijosInput" placeholder="Ingresa tu cantidad de hijos">
     <button id="postBtn">Enviar</button>
     
@@ -23,11 +24,17 @@
     <input type="text" name="usernamePatchInput" id="usernamePatchInput" placeholder="Ingresa tu username">
     <input type="text" name="hijosPatchInput" id="hijosPatchInput" placeholder="Cantidad nueva de hijos">
     <button id="patchBtn">Enviar</button>
+
+    <h2>Eliminar usuario (DELETE)</h2>
+    <input type="text" name="usernameDeleteInput" id="usernameDeleteInput" placeholder="Ingresa tu username">
+    <input type="password" name="passwordDeleteInput" id="passwordDeleteInput" placeholder="Ingresa tu password">
+    <button id="deleteBtn">Enviar</button>
   </div>
 
   <script src="dist/front.js"></script>
   <script src="dist/peticiones/post.js"></script>
   <script src="dist/peticiones/get.js"></script>
   <script src="dist/peticiones/patch.js"></script>
+  <script src="dist/peticiones/delete.js"></script>
 </body>
 </html>
